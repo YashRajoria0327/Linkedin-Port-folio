@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yash Rajoria | Cloud & Database Engineer - Final Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a1628;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 22, 40, 0.98);
+            padding: 1rem 5%;
+            z-index: 1000;
+            border-bottom: 2px solid #4a90e2;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4a90e2;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #b0c4de;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4a90e2;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 5% 50px;
+            background: linear-gradient(135deg, #0a1628 0%, #1a2942 100%);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .hero-text h2 {
+            font-size: 1.8rem;
+            color: #4a90e2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #b0c4de;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #4a90e2;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #357abd;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 2px solid #4a90e2;
+            color: #4a90e2;
+        }
+
+        .btn-secondary:hover {
+            background: #4a90e2;
+            color: white;
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .profile-pic {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            border: 5px solid #4a90e2;
+            object-fit: cover;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #4a90e2;
+        }
+
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: rgba(26, 41, 66, 0.5);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #4a90e2;
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #87ceeb;
+        }
+
+        .skill-card h3 {
+            color: #4a90e2;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .tag {
+            background: rgba(74, 144, 226, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #b0c4de;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #4a90e2;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #4a90e2;
+            border: 3px solid #0a1628;
+            box-shadow: 0 0 15px rgba(74, 144, 226, 0.8);
+        }
+
+        .experience-card {
+            background: rgba(26, 41, 66, 0.5);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #4a90e2;
+        }
+
+        .experience-card h3 {
+            color: #4a90e2;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-card .company {
+            color: #87ceeb;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-card .duration {
+            color: #b0c4de;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-card ul {
+            margin-left: 1.5rem;
+            color: #b0c4de;
+        }
+
+        .experience-card li {
+            margin-bottom: 0.8rem;
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: rgba(26, 41, 66, 0.5);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #4a90e2;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: #87ceeb;
+        }
+
+        .cert-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-card h4 {
+            color: #4a90e2;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-card p {
+            color: #b0c4de;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(26, 41, 66, 0.5);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #4a90e2;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: #87ceeb;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            color: #4a90e2;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card a {
+            color: #b0c4de;
+            text-decoration: none;
+        }
+
+        .contact-card a:hover {
+            color: #4a90e2;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .project-card {
+            background: rgba(26, 41, 66, 0.5);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid #4a90e2;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #87ceeb;
+            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .project-title {
+            flex: 1;
+        }
+
+        .project-title h3 {
+            color: #4a90e2;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-role {
+            color: #87ceeb;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .project-badge {
+            background: rgba(74, 144, 226, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: #87ceeb;
+            font-size: 0.9rem;
+            border: 1px solid rgba(74, 144, 226, 0.4);
+            white-space: nowrap;
+        }
+
+        .project-overview {
+            color: #b0c4de;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+        }
+
+        .project-details h4 {
+            color: #4a90e2;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-details ul {
+            margin-left: 1.5rem;
+            color: #b0c4de;
+        }
+
+        .project-details li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(74, 144, 226, 0.2);
+        }
+
+        .tech-item {
+            background: rgba(74, 144, 226, 0.15);
+            padding: 0.4rem 0.9rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: #b0c4de;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+        }
+
+        .outcome-box {
+            background: rgba(74, 144, 226, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            border-left: 4px solid #4a90e2;
+        }
+
+        .outcome-box h4 {
+            color: #87ceeb;
+            margin-bottom: 1rem;
+        }
+
+        .outcome-box ul {
+            margin-left: 1.5rem;
+            color: #b0c4de;
+        }
+
+        .outcome-box li {
+            margin-bottom: 0.6rem;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 22, 40, 0.9);
+            padding: 2rem 5%;
+            text-align: center;
+            border-top: 2px solid #4a90e2;
+        }
+
+        footer p {
+            color: #b0c4de;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .profile-pic {
+                width: 250px;
+                height: 250px;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-profile-pic {
+                width: 200px;
+                height: 200px;
+                margin: 0 auto 2rem;
+            }
+        }
+		
+		.about-section {
+  background: radial-gradient(
+      circle at top,
+      rgba(74, 144, 226, 0.15),
+      transparent 60%
+    ),
+    linear-gradient(135deg, #060b17, #0a1628);
+  padding: 100px 6% 120px;
+  color: #ffffff;
+  position: relative;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.about-left {
+  z-index: 2;
+}
+
+.about-name {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.about-role {
+  font-size: 1.4rem;
+  color: #4a90e2;
+  margin-bottom: 1.5rem;
+}
+
+.about-highlight {
+  font-size: 1.05rem;
+  color: #b0c4de;
+  line-height: 1.8;
+  max-width: 420px;
+}
+
+/* Image */
+.about-image-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.profile-pic {
+  background: #ffffff;
+  box-shadow:
+    0 22px 55px rgba(0, 0, 0, 0.55),
+    0 0 30px rgba(74, 144, 226, 0.18);
+}
+.about-image {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 18px;
+  background: #0a1628;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.6),
+    0 0 35px rgba(74, 144, 226, 0.35);
+}
+
+/* Bottom Card */
+.about-card {
+  max-width: 900px;
+  margin: -80px auto 0;
+  background: linear-gradient(
+    135deg,
+    rgba(42, 82, 152, 0.25),
+    rgba(30, 58, 95, 0.25)
+  );
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 2.8rem;
+  border: 1px solid rgba(74, 144, 226, 0.25);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+.about-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.2rem 2.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(42, 82, 152, 0.16),
+    rgba(30, 58, 95, 0.16)
+  );
+  backdrop-filter: blur(12px);
+  border-radius: 14px;
+  border: 1px solid rgba(74, 144, 226, 0.22);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-highlight {
+    margin: 0 auto;
+  }
+
+  .about-image {
+    width: 280px;
+    height: 360px;
+    margin-top: 2rem;
+  }
+
+  .about-card {
+    margin-top: 2rem;
+    padding: 2rem;
+  }
+}
+
+.about-impact {
+  margin-top: 1.6rem;
+  color: #87ceeb;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+
+.hero {
+  min-height: 100vh;
+  padding: 120px 6%;
+  background:
+    radial-gradient(circle at top, rgba(74,144,226,0.15), transparent 55%),
+    linear-gradient(135deg, #060b17, #0a1628);
+  color: #ffffff;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* LEFT TEXT */
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text h2 {
+  font-size: 1.4rem;
+  color: #4a90e2;
+  margin-bottom: 1.5rem;
+}
+
+.hero-summary {
+  max-width: 520px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #cbd6ea;
+  margin-bottom: 2.2rem;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #4a90e2;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #357abd;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  border: 2px solid #4a90e2;
+  color: #4a90e2;
+}
+
+.btn-secondary:hover {
+  background: #4a90e2;
+  color: #fff;
+}
+
+/* RIGHT FLOATING CARDS */
+.hero-cards {
+  position: relative;
+  height: 360px;
+}
+
+.hero-card {
+  position: absolute;
+  width: 280px;
+  padding: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(42, 82, 152, 0.25),
+    rgba(30, 58, 95, 0.25)
+  );
+  backdrop-filter: blur(12px);
+  border-radius: 14px;
+  border: 1px solid rgba(74,144,226,0.3);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+}
+
+.hero-card h4 {
+  color: #87ceeb;
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+}
+
+.hero-card p {
+  color: #cbd6ea;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* CARD POSITIONS */
+.card-1 {
+  top: 0;
+  left: 40px;
+}
+
+.card-2 {
+  top: 110px;
+  right: 0;
+}
+
+.card-3 {
+  bottom: 0;
+  left: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-summary {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cards {
+    margin-top: 3rem;
+    height: auto;
+  }
+
+  .hero-card {
+    position: relative;
+    margin: 1rem auto;
+  }
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">YR</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<section class="hero" id="home">
+  <div class="hero-container">
+
+    <!-- LEFT: TEXT CONTENT -->
+    <div class="hero-text">
+      <h1>Yash Rajoria</h1>
+      <h2>Cloud & Database Engineer</h2>
+
+      <p class="hero-summary">
+        Designing and operating <strong>cloud-first Oracle database platforms</strong>
+        with a focus on high availability, performance engineering, and automation.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+        <a href="https://www.linkedin.com/in/yash-rajoriadba" target="_blank" class="btn btn-secondary">LinkedIn</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: FLOATING CARDS -->
+    <div class="hero-cards">
+      <div class="hero-card card-1">
+        <h4>☁️ Cloud Native</h4>
+        <p>Oracle Cloud Infrastructure (OCI), Autonomous Database deployment & operations</p>
+      </div>
+
+      <div class="hero-card card-2">
+        <h4>🔒 High Availability</h4>
+        <p>Oracle RAC, Data Guard, RMAN for resilient production systems</p>
+      </div>
+
+      <div class="hero-card card-3">
+        <h4>⚡ Performance Engineering</h4>
+        <p>AWR, ADDM, and ASH for proactive tuning and stability</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+    <!-- About Section -->
+<section class="about-section" id="about">
+  <div class="about-container">
+
+    <!-- Left Content -->
+    <div class="about-left">
+      <h2 class="about-name">Yash Rajoria</h2>
+      <h3 class="about-role">Cloud & Database Engineer</h3>
+
+      <p class="about-highlight">
+        4+ years of experience engineering and operating Oracle database platforms
+        with a strong focus on cloud adoption, high availability, and performance optimization.
+      </p>
+    </div>
+
+    <!-- Right Image -->
+    <div class="about-image-wrapper">
+      <img
+        src="portfolio-image.png"
+        alt="Yash Rajoria - Cloud & Database Engineer"
+        class="about-image"
+      />
+    </div>
+
+  </div>
+<br><br>
+  <!-- Bottom About Card -->
+   <div>
+  I work on designing and operating <strong>cloud-first Oracle database platforms</strong>
+  with an emphasis on reliability, automation, and long-term scalability.
+</div>
+
+<div>
+  My day-to-day work involves building and supporting <strong>high-availability
+  architectures</strong> using Oracle Cloud Infrastructure (OCI), Autonomous Database,
+  Oracle RAC, Data Guard, and RMAN across production and non-production environments.
+</div>
+
+<div>
+  I focus heavily on <strong>proactive performance engineering</strong>,
+  using AWR, ADDM, and ASH to identify bottlenecks early and maintain
+  stability for mission-critical workloads.
+</div>
+
+<div class="about-impact">
+  ▶ Designing resilient, secure, and automated database platforms aligned with modern cloud engineering practices.
+</div>
+
+
+  </div>
+</section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">Technical Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Cloud Platforms</h3>
+                <div class="skill-tags">
+                    <span class="tag">Oracle Cloud Infrastructure</span>
+                    <span class="tag">Autonomous Database</span>
+                    <span class="tag">OCI Wallet Config</span>
+                    <span class="tag">Cloud Migration</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>Database Technologies</h3>
+                <div class="skill-tags">
+                    <span class="tag">Oracle 12c/19c</span>
+                    <span class="tag">Oracle RAC</span>
+                    <span class="tag">SQL Server</span>
+                    <span class="tag">Multitenant DB</span>
+                    <span class="tag">Oracle SQL Developer</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>High Availability & DR</h3>
+                <div class="skill-tags">
+                    <span class="tag">Data Guard</span>
+                    <span class="tag">RMAN Backup</span>
+                    <span class="tag">ASM Storage</span>
+                    <span class="tag">Disaster Recovery</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>System Administration</h3>
+                <div class="skill-tags">
+                    <span class="tag">Linux (RHEL)</span>
+                    <span class="tag">Shell Scripting</span>
+                    <span class="tag">Cron Automation</span>
+                    <span class="tag">System Tuning</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>Performance & Monitoring</h3>
+                <div class="skill-tags">
+                    <span class="tag">AWR Reports</span>
+                    <span class="tag">ADDM Analysis</span>
+                    <span class="tag">ASH Monitoring</span>
+                    <span class="tag">Oracle OEM</span>
+                    <span class="tag">Query Optimization</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>Security & Compliance</h3>
+                <div class="skill-tags">
+                    <span class="tag">RBAC</span>
+                    <span class="tag">Database Auditing</span>
+                    <span class="tag">Encryption</span>
+                    <span class="tag">GDPR Compliance</span>
+                    <span class="tag">ISO Standards</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Major Projects</h2>
+        <div class="projects-grid">
+            
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">
+                        <h3>EPFO Data Center Operations</h3>
+                        <p class="project-role">Database & Infrastructure Engineer</p>
+                    </div>
+                    <span class="project-badge">Government of India</span>
+                </div>
+
+                <p class="project-overview">
+                    Managed and operated a mission-critical national-scale Oracle database environment supporting EPFO, one of the largest government systems in India. The project involved high availability, performance tuning, backup governance, and lifecycle management of complex Oracle RAC and Multitenant architectures.
+                </p>
+
+                <div class="project-details">
+                    <h4>Key Responsibilities & Impact</h4>
+                    <ul>
+                        <li>Administered Oracle 12c & Oracle 19c databases in production and non-production environments</li>
+                        <li>Managed a 7-node Oracle RAC cluster supporting high availability and fault tolerance</li>
+                        <li>Operated Oracle Multitenant architecture (CDB/PDB) with 123+ Production PDBs, ensuring isolation, performance, and availability</li>
+                        <li>Performed advanced performance analysis and tuning using AWR, ADDM, and SQL diagnostics</li>
+                        <li>Managed ASM storage, database capacity planning, and IO performance optimization</li>
+                        <li>Implemented enterprise backup strategies using RMAN, ensuring data protection and compliance</li>
+                        <li>Used Oracle Enterprise Manager (OEM) for proactive monitoring, alerting, and incident management</li>
+                    </ul>
+                </div>
+
+                <div class="outcome-box">
+                    <h4>📊 Outcome</h4>
+                    <ul>
+                        <li>Ensured 24×7 availability for a nationally critical system</li>
+                        <li>Supported a large-scale, high-load database landscape with zero tolerance for downtime</li>
+                        <li>Built a strong foundation in enterprise-grade database reliability and operations</li>
+                    </ul>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="tech-item">Oracle 12c/19c</span>
+                    <span class="tech-item">RAC</span>
+                    <span class="tech-item">ASM</span>
+                    <span class="tech-item">Multitenant (CDB/PDB)</span>
+                    <span class="tech-item">AWR</span>
+                    <span class="tech-item">ADDM</span>
+                    <span class="tech-item">RMAN</span>
+                    <span class="tech-item">Oracle OEM</span>
+                    <span class="tech-item">Linux (RHEL)</span>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">
+                        <h3>EPFO 2.0 Modernization Program</h3>
+                        <p class="project-role">Database Engineer (Migration & DR Focus)</p>
+                    </div>
+                    <span class="project-badge">Modernization</span>
+                </div>
+
+                <p class="project-overview">
+                    Worked on the EPFO 2.0 modernization initiative, focused on database migration, disaster recovery, and UAT stability to support next-generation application upgrades.
+                </p>
+
+                <div class="project-details">
+                    <h4>Key Responsibilities & Impact</h4>
+                    <ul>
+                        <li>Designed and managed database migrations using expdp/impdp, ensuring data consistency and minimal downtime</li>
+                        <li>Implemented and supported Oracle Active Data Guard (ADG) for disaster recovery and read-only workloads</li>
+                        <li>Configured and maintained Database Links (DB Links) to enable secure inter-database communication</li>
+                        <li>Managed UAT environments, supporting testing cycles, refreshes, and validation for application teams</li>
+                        <li>Assisted developers during functional and performance testing phases</li>
+                        <li>Ensured smooth transition from legacy setups to upgraded environments</li>
+                    </ul>
+                </div>
+
+                <div class="outcome-box">
+                    <h4>📊 Outcome</h4>
+                    <ul>
+                        <li>Enabled reliable DR architecture and safer release cycles</li>
+                        <li>Improved testing stability and deployment confidence</li>
+                        <li>Strengthened expertise in migration, replication, and availability design</li>
+                    </ul>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="tech-item">Oracle 12c/19c</span>
+                    <span class="tech-item">Data Guard</span>
+                    <span class="tech-item">Active Data Guard</span>
+                    <span class="tech-item">expdp/impdp</span>
+                    <span class="tech-item">DB Links</span>
+                    <span class="tech-item">Linux</span>
+                    <span class="tech-item">UAT Management</span>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">
+                        <h3>Regenst Monarch Implementation</h3>
+                        <p class="project-role">Cloud Database Engineer</p>
+                    </div>
+                    <span class="project-badge">Cloud Migration</span>
+                </div>
+
+                <p class="project-overview">
+                    Currently working on a cloud-first implementation involving migration and management of databases on Oracle Cloud Infrastructure (OCI) using Oracle Autonomous Database. This project represents a shift from traditional DBA operations to cloud-native database engineering.
+                </p>
+
+                <div class="project-details">
+                    <h4>Key Responsibilities & Impact</h4>
+                    <ul>
+                        <li>Provisioned and managed Oracle Autonomous Database (ATP) on OCI</li>
+                        <li>Executed database migrations from on-prem / legacy environments using expdp/impdp</li>
+                        <li>Configured secure wallet-based access, user roles, and privileges for Autonomous Database</li>
+                        <li>Performed database cloning using OCI services to support testing and parallel environments</li>
+                        <li>Monitored database performance and availability using OCI Monitoring and OEM</li>
+                        <li>Gained hands-on exposure to CI/CD pipeline execution, running database deployment scripts via Azure DevOps pipelines</li>
+                        <li>Collaborated with cloud and application teams to align database operations with cloud best practices</li>
+                    </ul>
+                </div>
+
+                <div class="outcome-box">
+                    <h4>📊 Outcome</h4>
+                    <ul>
+                        <li>Transitioned from manual DBA tasks to cloud-managed, automated database operations</li>
+                        <li>Built strong alignment with Cloud Engineer / Cloud Database Engineer roles</li>
+                        <li>Gained practical exposure to cloud security, automation, and CI/CD-driven database changes</li>
+                    </ul>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="tech-item">Oracle Cloud Infrastructure (OCI)</span>
+                    <span class="tech-item">Autonomous Database (ATP)</span>
+                    <span class="tech-item">Data Pump (expdp/impdp)</span>
+                    <span class="tech-item">OCI Cloning</span>
+                    <span class="tech-item">Wallet Configuration</span>
+                    <span class="tech-item">Azure DevOps</span>
+                    <span class="tech-item">CI/CD Pipelines</span>
+                    <span class="tech-item">Linux</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="experience-card">
+                    <h3>Associate Consultant</h3>
+                    <p class="company">Proso.ai</p>
+                    <p class="duration">August 2025 - Present | Noida, India</p>
+                    <ul>
+                        <li>Provision and manage Oracle Autonomous Databases (ATP) on OCI for mission-critical applications</li>
+                        <li>Handle user and role management ensuring compliance with security policies</li>
+                        <li>Configure ATP Wallets for secure client connectivity and application integration</li>
+                        <li>Perform continuous database monitoring, performance tuning, and backup management</li>
+                        <li>Collaborate on cloud migration initiatives implementing best practices for secure deployments</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="experience-card">
+                    <h3>Database Administrator</h3>
+                    <p class="company">ITWINGS INFOSYSTEM PRIVATE LIMITED</p>
+                    <p class="duration">July 2021 - August 2025 (4 years 2 months)</p>
+                    <ul>
+                        <li>Managed 7-node Oracle RAC 12c & 19c environment with 99.9% uptime</li>
+                        <li>Performed database performance tuning using AWR, ADDM, and ASH reports</li>
+                        <li>Led seamless database migrations and upgrades across platforms</li>
+                        <li>Implemented ASM storage solutions and role-based access control (RBAC)</li>
+                        <li>Automated database maintenance using Oracle Enterprise Manager (OEM)</li>
+                        <li>Administered Microsoft SQL Server alongside Oracle environments</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <h2 class="section-title">Certifications</h2>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div class="cert-icon">🏆</div>
+                <h4>Oracle Autonomous Database Cloud 2025 Certified Professional</h4>
+                <p>Oracle</p>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-icon">☁️</div>
+                <h4>Oracle Cloud Infrastructure 2024 Certified Foundations Associate</h4>
+                <p>Oracle</p>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-icon">📊</div>
+                <h4>Oracle Data Platform Foundations Associate (2025)</h4>
+                <p>Oracle</p>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-icon">🎓</div>
+                <h4>Google Garage Certification</h4>
+                <p>Google</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <a href="mailto:monurajoria.2010@gmail.com">monurajoria.2010@gmail.com</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">💼</div>
+                <h3>LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/yash-rajoriadba" target="_blank">Connect with me</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h3>Location</h3>
+                <p>Delhi, India</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Yash Rajoria. All rights reserved. | Cloud & Database Engineer</p>
+    </footer>
+</body>
+</html>
