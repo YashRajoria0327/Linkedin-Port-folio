@@ -60,88 +60,6 @@
             color: #4a90e2;
         }
 
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 100px 5% 50px;
-            background: linear-gradient(135deg, #0a1628 0%, #1a2942 100%);
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #ffffff;
-        }
-
-        .hero-text h2 {
-            font-size: 1.8rem;
-            color: #4a90e2;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-            color: #b0c4de;
-            margin-bottom: 2rem;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .btn {
-            padding: 0.8rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .btn-primary {
-            background: #4a90e2;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #357abd;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            border: 2px solid #4a90e2;
-            color: #4a90e2;
-        }
-
-        .btn-secondary:hover {
-            background: #4a90e2;
-            color: white;
-        }
-
-        .hero-image {
-            text-align: center;
-        }
-
-        .profile-pic {
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            border: 5px solid #4a90e2;
-            object-fit: cover;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-        }
-
         /* Section Styles */
         section {
             padding: 80px 5%;
@@ -484,10 +402,12 @@
                 font-size: 2rem;
             }
 
+            /* Unused: profile-pic is not present in current markup.
             .profile-pic {
                 width: 250px;
                 height: 250px;
             }
+            */
 
             .nav-links {
                 gap: 1rem;
@@ -498,11 +418,13 @@
                 grid-template-columns: 1fr;
             }
 
+            /* Unused: about-profile-pic is not present in current markup.
             .about-profile-pic {
                 width: 200px;
                 height: 200px;
                 margin: 0 auto 2rem;
             }
+            */
         }
 		
 		.about-section {
@@ -554,12 +476,14 @@
   display: flex;
   justify-content: center;
 }
+/* Unused: kept for future image variants; comment out to reduce CSS noise.
 .profile-pic {
   background: #ffffff;
   box-shadow:
     0 22px 55px rgba(0, 0, 0, 0.55),
     0 0 30px rgba(74, 144, 226, 0.18);
 }
+*/
 .about-image {
   width: 300px;
   height: 400px;
@@ -572,21 +496,6 @@
 }
 
 /* Bottom Card */
-.about-card {
-  max-width: 900px;
-  margin: -80px auto 0;
-  background: linear-gradient(
-    135deg,
-    rgba(42, 82, 152, 0.25),
-    rgba(30, 58, 95, 0.25)
-  );
-  backdrop-filter: blur(14px);
-  border-radius: 16px;
-  padding: 2.8rem;
-  border: 1px solid rgba(74, 144, 226, 0.25);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
-}
-
 .about-card {
   max-width: 1100px;
   margin: 0 auto;
@@ -709,12 +618,12 @@
 /* RIGHT FLOATING CARDS */
 .hero-cards {
   position: relative;
-  height: 360px;
+  height: 380px;
 }
 
 .hero-card {
   position: absolute;
-  width: 280px;
+  width: clamp(220px, 32vw, 320px);
   padding: 1.5rem;
   background: linear-gradient(
     135deg,
@@ -742,17 +651,27 @@
 /* CARD POSITIONS */
 .card-1 {
   top: 0;
-  left: 40px;
+  left: clamp(10px, 4vw, 40px);
 }
 
 .card-2 {
-  top: 110px;
+  top: clamp(90px, 12vw, 120px);
   right: 0;
 }
 
 .card-3 {
-  bottom: 0;
+  bottom: clamp(0px, 3vw, 20px);
   left: 0;
+}
+
+@media (max-width: 1200px) {
+  .hero-cards {
+    height: 340px;
+  }
+
+  .card-2 {
+    right: clamp(0px, 2vw, 20px);
+  }
 }
 
 /* RESPONSIVE */
@@ -865,29 +784,30 @@
   </div>
 <br><br>
   <!-- Bottom About Card -->
-   <div>
-  I work on designing and operating <strong>cloud-first Oracle database platforms</strong>
-  with an emphasis on reliability, automation, and long-term scalability.
-</div>
+  <div class="about-card">
+    <div>
+      I work on designing and operating <strong>cloud-first Oracle database platforms</strong>
+      with an emphasis on reliability, automation, and long-term scalability.
+    </div>
 
-<div>
-  My day-to-day work involves building and supporting <strong>high-availability
-  architectures</strong> using Oracle Cloud Infrastructure (OCI), Autonomous Database,
-  Oracle RAC, Data Guard, and RMAN across production and non-production environments.
-</div>
+    <div>
+      My day-to-day work involves building and supporting <strong>high-availability
+      architectures</strong> using Oracle Cloud Infrastructure (OCI), Autonomous Database,
+      Oracle RAC, Data Guard, and RMAN across production and non-production environments.
+    </div>
 
-<div>
-  I focus heavily on <strong>proactive performance engineering</strong>,
-  using AWR, ADDM, and ASH to identify bottlenecks early and maintain
-  stability for mission-critical workloads.
-</div>
+    <div>
+      I focus heavily on <strong>proactive performance engineering</strong>,
+      using AWR, ADDM, and ASH to identify bottlenecks early and maintain
+      stability for mission-critical workloads.
+    </div>
 
-<div class="about-impact">
-  ▶ Designing resilient, secure, and automated database platforms aligned with modern cloud engineering practices.
-</div>
-
-
+    <div class="about-impact">
+      ▶ Designing resilient, secure, and automated database platforms aligned with modern cloud engineering practices.
+    </div>
   </div>
+
+</div>
 </section>
 
     <!-- Skills Section -->
